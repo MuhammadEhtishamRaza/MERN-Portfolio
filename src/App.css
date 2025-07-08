@@ -1,0 +1,24 @@
+.light-theme {
+  --navbar-bg-color: #3fb4d7;
+  --navlink-bg-color: #89dcf5;
+  --navlink-color: #1463ec;
+  --background-color-1: #37528c;
+  --background-color-2: #13358d;
+  --input-textarea-bg-color: #4c99df;
+}
+.dark-theme {
+  --navbar-bg-color: #000;
+  --navlink-bg-color: #000;
+  --navlink-color: #9ca3af;
+  --background-color-1: #111827;
+  --background-color-2: #000;
+  --input-textarea-bg-color: #1f2937;
+}
+:root {
+  --navbar-bg-color: #000;
+  --navlink-bg-color: #000;
+  --navlink-color: #9ca3af;
+  --background-color-1: #111827;
+  --background-color-2: #000;
+  --input-textarea-bg-color: #1f2937;
+}

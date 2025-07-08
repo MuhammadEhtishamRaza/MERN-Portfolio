@@ -1,0 +1,112 @@
+.contact {
+  padding: 48px 94px;
+  background-color: var(--background-color-2);
+  border-bottom: 1px solid rgb(35, 54, 83);
+}
+
+.contact-description {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-description h1 {
+  color: #fff;
+}
+
+.contact-description h1 span {
+  color: #eab308;
+}
+
+.contact-description p {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-address {
+  align-self: center;
+}
+
+.contact-address p {
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 16px;
+}
+
+.contact-address p span {
+  color: #eab308;
+}
+
+.contact-info form div input,
+.contact-info form div textarea {
+  background-color: var(--input-textarea-bg-color);
+  border: none;
+  margin-bottom: 32px;
+  padding: 8px;
+}
+
+.contact-info form div #input-name {
+  width: 350px;
+  height: 33px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  color: #fff;
+}
+
+.contact-info form div input[type="submit"] {
+  background-color: #eab308;
+  padding: 16px 20px;
+  transition: color 0.3s ease;
+  border-radius: 4px;
+}
+
+.contact-info form div input[type="submit"]:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-address {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 24px 36px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-info textarea {
+    max-width: 250px;
+  }
+  .contact-info input {
+    max-width: 150px;
+  }
+  .contact-address p {
+    font-size: 12px;
+    margin: 0;
+  }
+  .contact-description p {
+    font-size: 14px;
+  }
+  .contact-info form div input[type="submit"] {
+    margin-bottom: 0px;
+  }
+}
