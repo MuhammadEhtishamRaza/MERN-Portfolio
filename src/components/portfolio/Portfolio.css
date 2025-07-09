@@ -54,10 +54,10 @@
   .portfolio {
     padding: 32px 36px;
   }
-  .portfolio-img-1 {
+  .portfolio-content div:first-child img {
     width: 320px;
   }
-  .portfolio-img {
+  .portfolio-content div img {
     width: 150px;
   }
 }
