@@ -30,11 +30,17 @@
 
 .service-item h2 {
   color: #fff;
+  height: 60px;
 }
 
 .service-item p {
   color: #6b7280;
   font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 992px) {
@@ -46,6 +52,13 @@
   }
   .service-item {
     padding: 20px;
+  }
+  .service-item p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

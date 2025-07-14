@@ -2,14 +2,14 @@ export async function fetchServices() {
   return [
     {
       id: 1,
-      title: "Full-Stack Web Development",
+      title: "Web Development",
       img: "service1.svg",
       description:
         "Build dynamic, scalable, and secure web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js), tailored to business needs.",
     },
     {
       id: 2,
-      title: "Mobile App Development",
+      title: "Mobile Development",
       img: "service2.svg",
       description:
         "Develop high-performance, responsive mobile applications for Android and iOS using Flutter, with a focus on UI/UX and native-like performance.",
@@ -20,6 +20,16 @@ export async function fetchServices() {
       img: "service3.svg",
       description:
         "Design and implement robust APIs and backend systems using Flask or FastAPI, with support for authentication and third-party integrations.",
+    },
+  ];
+}
+
+export async function fetchServiceData() {
+  return [
+    {
+      id: 1,
+      description:
+        "I'm a Software Engineer specializing in MERN, Flask, FastAPI, and Flutter. I deliver scalable, high-performance web and mobile solutions tailored to business needs.",
     },
   ];
 }

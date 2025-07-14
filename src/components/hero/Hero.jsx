@@ -12,7 +12,7 @@ export const Hero = () => {
     return (
         <>
             {data.map((dataitem) => (
-                <div className="hero" key={dataitem.key}>
+                <div className="hero" key={dataitem.id}>
                     <div className="hero-content">
                         <p>Hello, Welcome</p>
                         <h1 className="hero-tile">I m {dataitem.title}</h1>

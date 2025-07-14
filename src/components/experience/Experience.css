@@ -30,6 +30,11 @@
 .experience-item p {
   font-size: 16px;
   margin: 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .experience-item p:first-child {

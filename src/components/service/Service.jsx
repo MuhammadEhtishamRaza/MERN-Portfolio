@@ -4,15 +4,17 @@ import 'react-multi-carousel/lib/styles.css';
 // import img1 from "../../assets/service1.svg";
 // import img2 from "../../assets/service2.svg";
 // import img3 from "../../assets/service3.svg";
-import { fetchServices } from "../../api/project";
+import { fetchServiceData, fetchServices } from "../../api/project";
 import { useEffect, useState } from "react";
 
 const Service = () => {
 
     const [services, setServices] = useState([]);
+    const [serviceData, setServiceData] = useState([]);
 
     useEffect(() => {
-        fetchServices().then((data) => setServices(data))
+        fetchServices().then((data) => setServices(data)),
+            fetchServiceData().then((data) => setServiceData(data))
     }, []);
 
     const responsive = {
@@ -35,15 +37,17 @@ const Service = () => {
                 <div className="service-title">
                     <h1><span>My</span> Service</h1>
                 </div>
-                <div className="service-description">
-                    <p>I'm a Software Engineer specializing in MERN, Flask, FastAPI, and Flutter. I deliver scalable, high-performance web and mobile solutions tailored to business needs.</p>
-                </div>
+                {serviceData.map((item) => (
+                    <div className="service-description" key={item.id}>
+                        <p>{item.description}</p>
+                    </div>
+                ))}
             </div>
             <div className="service-details">
                 <Carousel responsive={responsive} swipeable={false}
-                    draggable={false}
+                    draggable={true}
                     showDots={true}
-                    arrows={false}
+                    arrows={true}
                     ssr={true}
                     infinite={true}
                     autoPlay={true}

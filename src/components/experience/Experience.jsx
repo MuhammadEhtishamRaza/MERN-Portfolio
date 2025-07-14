@@ -35,9 +35,9 @@ const Experience = () => {
             </div>
             <div className="experience-details">
                 <Carousel responsive={responsive} swipeable={false}
-                    draggable={false}
+                    draggable={true}
                     showDots={true}
-                    arrows={false}
+                    arrows={true}
                     ssr={true}
                     infinite={true}
                     autoPlay={true}
