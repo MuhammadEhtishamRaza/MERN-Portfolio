@@ -25,7 +25,7 @@ const Portfolio = () => {
             <div className='portfolio-content'>
                 {portfolios.map((portfolio) => (
                     <div className={`portfolio-item-${portfolio.id}`} key={portfolio.id}>
-                        <img src={portfolio.image} alt="portfolio-image" className={`portfolio-img-${portfolio.id}`} />
+                        <img src={portfolio.image} alt="portfolio-image" className={`portfolio-img-${portfolio.id}`} width={"100%"} />
                     </div>
                 ))}
                 {/* <div className='portfolio-item-2'>
