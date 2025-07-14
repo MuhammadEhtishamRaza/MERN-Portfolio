@@ -1,6 +1,12 @@
+import { useEffect, useState } from 'react';
 import './Contact.css';
+import { fetchContact } from '../../api/project';
 
 const Contact = () => {
+    const [contact, setContact] = useState([])
+    useEffect(() => {
+        fetchContact().then((data) => setContact(data))
+    }, [])
     return (
         <div className='contact' id='contact'>
             <div className='contact-description'>
@@ -9,12 +15,14 @@ const Contact = () => {
                     Let's build something great together — feel free to reach out!</p>
             </div>
             <div className='contact-content'>
-                <div className='contact-address'>
-                    <p><span>Address_</span> Street No. 01, Sector: I-8/1, Islamabad</p>
-                    <p><span>Phone_</span> +92-310-5476796</p>
-                    <p><span>E mail_</span> muhammadehtishamraza15@gmail.com</p>
-                    <p><span>Github_</span> www.github.com/MuhammadEhtishamRaza</p>
-                </div>
+                {contact.map((item) => (
+                    <div className='contact-address' key={item.id}>
+                        <p><span>Address_</span> {item.address}</p>
+                        <p><span>Phone_</span> {item.phone}</p>
+                        <p><span>E mail_</span> {item.email}</p>
+                        <p><span>Github_</span> {item.github}</p>
+                    </div>
+                ))}
                 <div className='contact-info'>
                     <form action="#">
                         <div>

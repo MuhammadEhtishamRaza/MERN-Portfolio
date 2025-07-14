@@ -77,3 +77,40 @@ export async function fetchExperience() {
     },
   ];
 }
+
+export async function fetchHeroData() {
+  return [
+    {
+      id: 1,
+      title: "Muhammad Ehtisham Raza",
+      description:
+        "I'm a Software Engineer specializing in MERN stack, Flask, FastAPI, and Flutter. I build scalable full-stack web and mobile applications.",
+      image: "portfolio.png",
+    },
+  ];
+}
+
+export async function fetchAbout() {
+  return [
+    {
+      id: 1,
+      description1:
+        "I'm a Software Engineer specializing in MERN stack, Flask, FastAPI, and cross-platform mobile development with Flutter. I build scalable, high-performance, and user-centric web and mobile applications.",
+      description2:
+        "Proficient in RESTful API design, state management, and clean architecture.",
+      image: "about.png",
+    },
+  ];
+}
+
+export async function fetchContact() {
+  return [
+    {
+      id: 1,
+      address: "Street No. 01, Sector: I-8/1, Islamabad",
+      phone: "+92-310-5476796",
+      email: "muhammadehtishamraza15@gmail.com",
+      github: "www.github.com/MuhammadEhtishamRaza",
+    },
+  ];
+}

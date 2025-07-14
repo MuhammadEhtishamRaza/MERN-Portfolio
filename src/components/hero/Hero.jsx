@@ -1,19 +1,29 @@
 import "./Hero.css"
-import img from "../../assets/portfolio.png"
+// import img from "../../assets/portfolio.png"
+import { useEffect, useState } from "react";
+import { fetchHeroData } from "../../api/project";
 
 export const Hero = () => {
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetchHeroData().then((data) => setData(data))
+    }, [])
+
     return (
-        <div className="hero">
-            <div className="hero-content">
-                <p>Hello, Welcome</p>
-                <h1 className="hero-tile">I m Muhammad Ehtisham Raza</h1>
-                <p>I'm a Software Engineer specializing in MERN stack, Flask, FastAPI, and Flutter.
-                    I build scalable full-stack web and mobile applications.</p>
-                <a href="#contact" className="hero-btn">Contact us</a>
-            </div>
-            <div className="hero-image">
-                <img src={img} alt="Hero Image" />
-            </div>
-        </div>
+        <>
+            {data.map((dataitem) => (
+                <div className="hero" key={dataitem.key}>
+                    <div className="hero-content">
+                        <p>Hello, Welcome</p>
+                        <h1 className="hero-tile">I m {dataitem.title}</h1>
+                        <p>{dataitem.description}</p>
+                        <a href="#contact" className="hero-btn">Contact us</a>
+                    </div>
+                    <div className="hero-image">
+                        <img src={dataitem.image} alt="Hero Image" />
+                    </div>
+                </div>
+            ))}
+        </>
     )
 }
