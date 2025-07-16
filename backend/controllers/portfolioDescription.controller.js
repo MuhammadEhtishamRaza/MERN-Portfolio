@@ -42,7 +42,7 @@ export const updatePortfolioDescription = async (req, res) => {
     }
     const updateData = await PortfolioDescription.findByIdAndUpdate(
       id,
-      description,
+      { description },
       { new: true }
     );
     res.status(200).json({

@@ -3,7 +3,7 @@ import Service from "../models/service.model.js";
 export const getServiceData = async (req, res) => {
   try {
     const service = await Service.find();
-    res.status(200).json({ service });
+    res.status(200).json(service);
   } catch (error) {
     console.log("Error in getServiceData controller: ", error.messsage);
     res.status(500).json({ error: "Internal Server Error" });

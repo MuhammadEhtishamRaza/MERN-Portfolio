@@ -2,7 +2,7 @@ import About from "../models/about.model.js";
 
 export const getAboutData = async (req, res) => {
   try {
-    const data = await About.findOne();
+    const data = await About.find();
     res.status(200).json(data);
   } catch (error) {
     console.error("Error in getAboutData Controller: ", error.message);

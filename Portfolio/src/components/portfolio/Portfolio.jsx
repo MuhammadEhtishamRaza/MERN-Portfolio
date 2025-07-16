@@ -4,28 +4,51 @@ import './Portfolio.css'
 // import img3 from "../../assets/portfolio-3.png"
 // import img4 from "../../assets/portfolio-4.png"
 // import img5 from "../../assets/portfolio-5.png"
-import { fetchPortfolio } from '../../api/project'
+// import { fetchPortfolio } from '../../api/project'
 import { useEffect, useState } from 'react'
 
 const Portfolio = () => {
 
     const [portfolios, setPortfolios] = useState([]);
+    const [portfolioDescription, setPortfolioDescription] = useState([])
+
+    const fetchPortfolio = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/portfoliosection1/portfolio")
+            const result = await response.json()
+            return result
+        } catch (error) {
+            console.error("Error in fetching from Portfolio Section 1 API: ", error.message)
+        }
+    }
+
+    const fetchPortfolioDescription = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/portfoliosection2/description")
+            const result = await response.json()
+            return result
+        } catch (error) {
+            console.error("Error in fetching from Portfolio Section 2 API: ", error.message)
+        }
+    }
 
     useEffect(() => {
         fetchPortfolio().then((data) => setPortfolios(data))
+        fetchPortfolioDescription().then((data) => setPortfolioDescription(data))
     }, []);
 
     return (
         <div className='portfolio' id='portfolio'>
-            <div className='portfolio-description'>
-                <h1>My <span>Portfolio</span></h1>
-                <p>Explore my work — From full-stack web apps to cross-platform mobile solutions <br /> Built using modern technologies like MERN, Flask, FastAPI, and Flutter.</p>
-            </div>
-
+            {portfolioDescription.map((item) => (
+                <div className='portfolio-description' key={item._id}>
+                    <h1>My <span>Portfolio</span></h1>
+                    <p>{item.description}</p>
+                </div>
+            ))}
             <div className='portfolio-content'>
                 {portfolios.map((portfolio) => (
-                    <div className={`portfolio-item-${portfolio.id}`} key={portfolio.id}>
-                        <img src={portfolio.image} alt="portfolio-image" className={`portfolio-img-${portfolio.id}`} width={"100%"} />
+                    <div className={`portfolio-item-${portfolio._id}`} key={portfolio._id}>
+                        <img src={portfolio.image} alt="portfolio-image" className={`portfolio-img-${portfolio._id}`} width={"100%"} />
                     </div>
                 ))}
                 {/* <div className='portfolio-item-2'>

@@ -28,7 +28,7 @@
   row-gap: 30px;
 }
 
-.portfolio-item-1 {
+.portfolio-content div:first-child {
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
 }

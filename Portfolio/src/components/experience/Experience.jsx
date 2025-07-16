@@ -1,15 +1,38 @@
 import "./Experience.css";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { fetchExperience } from "../../api/project";
+// import { fetchExperience } from "../../api/project";
 import { useEffect, useState } from "react";
 
 const Experience = () => {
 
     const [experiences, setExperiences] = useState([]);
+    const [experienceDescription, setExperienceDescription] = useState([]);
+
+    const fetchExperience = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/experiencesection1/experience")
+            const result = await response.json()
+            return result
+        } catch (error) {
+            console.error("Error while fetching from Experience Section 1 API: ", error.message)
+        }
+    }
+
+    const fetchExperienceDescription = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/experiencesection2/description")
+            const result = await response.json()
+            // console.log("Experience Description: ", result)
+            return result
+        } catch (error) {
+            console.error("Error while fetching from Experience Section 2 API: ", error.message)
+        }
+    }
 
     useEffect(() => {
         fetchExperience().then((data) => setExperiences(data));
+        fetchExperienceDescription().then((data) => setExperienceDescription(data))
     }, [])
 
     const responsive = {
@@ -29,10 +52,12 @@ const Experience = () => {
 
     return (
         <div className="experience" id="experience">
-            <div className="experience-description">
-                <h1>My <span>Experience</span></h1>
-                <p>Built web and mobile applications using MERN, Flask, FastAPI, and Flutter.<br /> Focused on scalable architecture and smooth user experience.</p>
-            </div>
+            {experienceDescription.map((item) => (
+                <div className="experience-description" key={item._id}>
+                    <h1>My <span>Experience</span></h1>
+                    <p>{item.description}</p>
+                </div>
+            ))}
             <div className="experience-details">
                 <Carousel responsive={responsive} swipeable={false}
                     draggable={true}

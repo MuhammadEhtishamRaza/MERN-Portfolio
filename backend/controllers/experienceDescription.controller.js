@@ -42,7 +42,7 @@ export const updateExperienceDescription = async (req, res) => {
     }
     const updateData = await ExperienceDescription.findByIdAndUpdate(
       id,
-      description,
+      { description },
       { new: true }
     );
     res.status(200).json({

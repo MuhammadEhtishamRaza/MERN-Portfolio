@@ -4,13 +4,35 @@ import 'react-multi-carousel/lib/styles.css';
 // import img1 from "../../assets/service1.svg";
 // import img2 from "../../assets/service2.svg";
 // import img3 from "../../assets/service3.svg";
-import { fetchServiceData, fetchServices } from "../../api/project";
+// import { fetchServiceData, fetchServices } from "../../api/project";
 import { useEffect, useState } from "react";
 
 const Service = () => {
 
     const [services, setServices] = useState([]);
     const [serviceData, setServiceData] = useState([]);
+
+    const fetchServices = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/servicesection1/service")
+            const result = await response.json()
+            // console.log("service1: ", result)
+            return result
+        } catch (error) {
+            console.error("Error in fetching from Service Section 1 API: ", error.message)
+        }
+    }
+
+    const fetchServiceData = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/servicesection2/description")
+            const result = await response.json()
+            // console.log("service2: ", result)
+            return result
+        } catch (error) {
+            console.error("Error in fetching from Service Section 2 API: ", error.message)
+        }
+    }
 
     useEffect(() => {
         fetchServices().then((data) => setServices(data)),
@@ -38,7 +60,7 @@ const Service = () => {
                     <h1><span>My</span> Service</h1>
                 </div>
                 {serviceData.map((item) => (
-                    <div className="service-description" key={item.id}>
+                    <div className="service-description" key={item._id}>
                         <p>{item.description}</p>
                     </div>
                 ))}
@@ -60,8 +82,8 @@ const Service = () => {
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px">
                     {services.map((service) => (
-                        <div className="service-item" key={service.id}>
-                            <img src={service.img} alt="service" />
+                        <div className="service-item" key={service._id}>
+                            <img src={service.image} alt="service" />
                             <h2>{service.title}</h2>
                             <p>{service.description}</p>
                         </div>

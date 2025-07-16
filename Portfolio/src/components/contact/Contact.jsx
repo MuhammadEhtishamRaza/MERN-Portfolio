@@ -1,9 +1,21 @@
 import { useEffect, useState } from 'react';
 import './Contact.css';
-import { fetchContact } from '../../api/project';
+// import { fetchContact } from '../../api/project';
 
 const Contact = () => {
     const [contact, setContact] = useState([])
+
+    const fetchContact = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/contactsection/contact")
+            const result = await response.json()
+            // console.log("Contact: ", result)
+            return result
+        } catch (error) {
+            console.error("Error while fetching from Contact Section API: ", error.message)
+        }
+    }
+
     useEffect(() => {
         fetchContact().then((data) => setContact(data))
     }, [])
@@ -16,7 +28,7 @@ const Contact = () => {
             </div>
             <div className='contact-content'>
                 {contact.map((item) => (
-                    <div className='contact-address' key={item.id}>
+                    <div className='contact-address' key={item._id}>
                         <p><span>Address_</span> {item.address}</p>
                         <p><span>Phone_</span> {item.phone}</p>
                         <p><span>E mail_</span> {item.email}</p>

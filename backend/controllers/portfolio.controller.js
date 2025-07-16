@@ -21,7 +21,7 @@ export const sendPortfolioData = async (req, res) => {
     });
 
     await newPortfolio.save();
-    res.status(200).json(newPortfolio);
+    res.status(201).json(newPortfolio);
   } catch (error) {
     console.error("Error in sendPortfolioData controller: ", error.message);
     res.status(500).json({ error: "Internal Server Error" });

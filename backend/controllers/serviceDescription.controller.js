@@ -40,7 +40,7 @@ export const updateServiceDescription = async (req, res) => {
     }
     const updateData = await ServiceDescription.findByIdAndUpdate(
       id,
-      description,
+      { description },
       { new: true }
     );
     if (!updateData) {
