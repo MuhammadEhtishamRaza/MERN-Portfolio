@@ -50,7 +50,7 @@
   padding: 8px;
 }
 
-.contact-info form div #input-name {
+.contact-info form div .input-name {
   width: 350px;
   height: 33px;
 }

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import './Contact.css';
+import Swal from "sweetalert2"
 // import { fetchContact } from '../../api/project';
 
 const Contact = () => {
@@ -19,6 +20,49 @@ const Contact = () => {
     useEffect(() => {
         fetchContact().then((data) => setContact(data))
     }, [])
+
+    const submitContact = async (previousState, formData) => {
+        try {
+            // console.log(formData)
+            const data = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message"),
+            };
+            const response = await fetch("http://localhost:3000/api/contactform/form", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            const result = await response.json()
+            // console.log(result)
+
+            if (result["message"] == "Message Received") {
+                Swal.fire({
+                    title: "Success",
+                    text: result?.message || "Form submitted successfully!",
+                    icon: "success",
+                    timer: 2500,
+                })
+            }
+
+            return null
+        } catch (error) {
+            console.error("Error while submiting contact form", error.message)
+            Swal.fire({
+                title: "Error",
+                text: "Something went wrong while submitting the form.",
+                icon: "error",
+                confirmButtonText: "OK"
+            });
+        }
+    }
+
+    const [error, submitAction, isPending] = useActionState(submitContact, null)
+
+
     return (
         <div className='contact' id='contact'>
             <div className='contact-description'>
@@ -36,18 +80,19 @@ const Contact = () => {
                     </div>
                 ))}
                 <div className='contact-info'>
-                    <form action="#">
+                    <form action={submitAction}>
                         <div>
-                            <input type="text" name="name" id="input-name" placeholder='Name' required />
+                            <input type="text" name="name" className="input-name" placeholder='Name' required />
                         </div>
                         <div>
-                            <input type="email" name="email" id="input-name" placeholder='Email' required />
+                            <input type="email" name="email" className="input-name" placeholder='Email' required />
                         </div>
                         <div>
                             <textarea name="message" id="input-message" placeholder='Message' cols={"64"} rows={"8"} required />
                         </div>
+                        {error && <p style={{ color: 'white' }}>Error occured</p>}
                         <div>
-                            <input type="submit" value="Contact us" />
+                            <input type="submit" value={isPending ? "Submitting" : "Contact Us"} />
                         </div>
                     </form>
                 </div>
