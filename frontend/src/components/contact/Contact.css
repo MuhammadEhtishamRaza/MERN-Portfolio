@@ -46,7 +46,7 @@
 .contact-info form div textarea {
   background-color: var(--input-textarea-bg-color);
   border: none;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   padding: 8px;
 }
 

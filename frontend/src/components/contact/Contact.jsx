@@ -38,10 +38,13 @@ const Contact = () => {
                 <div className='contact-info'>
                     <form action="#">
                         <div>
-                            <input type="text" name="name" id="input-name" placeholder='Name' />
+                            <input type="text" name="name" id="input-name" placeholder='Name' required />
                         </div>
                         <div>
-                            <textarea name="message" id="input-message" placeholder='Message' cols={"64"} rows={"8"}></textarea>
+                            <input type="email" name="email" id="input-name" placeholder='Email' required />
+                        </div>
+                        <div>
+                            <textarea name="message" id="input-message" placeholder='Message' cols={"64"} rows={"8"} required />
                         </div>
                         <div>
                             <input type="submit" value="Contact us" />
