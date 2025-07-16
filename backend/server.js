@@ -10,6 +10,7 @@ import portfolio1Router from "./routes/portfolio.route.js";
 import portfolio2Router from "./routes/portfolioDescription.route.js";
 import experience1Router from "./routes/experience.route.js";
 import experience2Router from "./routes/experienceDescription.route.js";
+import contactFormRouter from "./routes/contactForm.route.js";
 import cors from "cors";
 
 dotenv.config();
@@ -30,6 +31,7 @@ app.use("/api/portfoliosection1", portfolio1Router);
 app.use("/api/portfoliosection2", portfolio2Router);
 app.use("/api/experiencesection1", experience1Router);
 app.use("/api/experiencesection2", experience2Router);
+app.use("/api/contactform", contactFormRouter);
 
 app.listen(PORT, () => {
   connectDb();
