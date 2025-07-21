@@ -19,6 +19,7 @@
   top: -15px;
   left: 35px;
   z-index: 1;
+  border-radius: 12px;
 }
 
 .about-content {

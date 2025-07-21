@@ -32,16 +32,23 @@ export const updatePortfolioData = async (req, res) => {
   try {
     const { id } = req.params;
     const image = req.file?.path;
+    // console.log(image);
     if (!image) {
       return res.status(400).join({ error: "All fields are required" });
     }
 
-    const updateData = await Portfolio.findByIdAndUpdate(id, image, {
-      new: true,
-    });
+    const updateData = await Portfolio.findByIdAndUpdate(
+      id,
+      { image },
+      {
+        new: true,
+      }
+    );
+
+    // console.log(updateData);
 
     res.status(200).json({
-      updata: image,
+      update: image,
       data: updateData,
       message: "Portfolio data updated successfully",
     });

@@ -32,6 +32,9 @@
 .hero-btn:hover {
   color: #fff;
 }
+.hero-image img {
+  border-radius: 12px;
+}
 
 @media screen and (max-width: 992px) {
   .hero {
