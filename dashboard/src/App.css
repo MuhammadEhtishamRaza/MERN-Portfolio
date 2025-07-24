@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Nunito', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%);
+  color: #22223b;
+  min-height: 100vh;
+  transition: background 0.4s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(74,78,105,0.10);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+  transition: box-shadow 0.2s;
+}
+
+@media (max-width: 900px) {
+  .main-card {
+    padding: 1.2rem 0.5rem;
+    margin: 1rem 0.2rem;
+  }
+}
