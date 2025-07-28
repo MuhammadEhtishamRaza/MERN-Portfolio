@@ -20,6 +20,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// const allowedOrigins = [
+//   // "http://localhost:5173",
+//   "http://localhost:5174",
+//   "https://react-portfolio-two-pi.vercel.app",
+// ];
 app.use(cors());
 
 app.use("/api/herosection", heroRouter);
