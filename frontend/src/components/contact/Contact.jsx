@@ -44,7 +44,7 @@ const Contact = () => {
                     title: "Success",
                     text: result?.message || "Form submitted successfully!",
                     icon: "success",
-                    timer: 2500,
+                    timer: 500,
                 })
             }
 
