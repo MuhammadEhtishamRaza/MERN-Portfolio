@@ -55,6 +55,11 @@
   height: 33px;
 }
 
+input,
+textarea {
+  color: #fff;
+}
+
 input:focus-visible,
 textarea:focus-visible {
   outline: none;
@@ -62,6 +67,16 @@ textarea:focus-visible {
 
 input:focus,
 textarea:focus {
+  color: #fff;
+}
+
+input:active,
+textarea:active {
+  color: #fff;
+}
+
+input:target,
+textarea:target {
   color: #fff;
 }
 
