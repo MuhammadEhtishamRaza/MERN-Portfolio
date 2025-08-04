@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-content">
-                <h1>AboutMe.</h1>
+                <h1>About<span>Me.</span></h1>
                 <p>Crafting scalable web and mobile solutions with MERN, Flask, FastAPI, and Flutter.<br />© 2025 Muhammad Ehtisham Raza. All rights reserved.</p>
                 <ul>
                     <li><a href="#"><FaFacebook /></a></li>

@@ -25,9 +25,13 @@
 }
 
 .footer-content h1 {
-  color: #fff;
+  color: var(--footer-h1-color);
   margin: 0;
   padding: 36px 0 22px;
+}
+
+.footer-content h1 span{
+  color: var(--accent-primary);
 }
 
 .footer-content p {
@@ -38,6 +42,7 @@
 .footer-content ul li a * {
   width: 24px;
   height: 24px;
+  color: var(--text-primary);
 }
 
 @media screen and (max-width: 576px) {

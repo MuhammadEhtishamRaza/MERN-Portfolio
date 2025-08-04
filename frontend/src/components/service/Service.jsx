@@ -57,7 +57,7 @@ const Service = () => {
         <div className="service" id="service">
             <div className="service-intro">
                 <div className="service-title">
-                    <h1><span>My</span> Service</h1>
+                    <h1>My <span>Service</span></h1>
                 </div>
                 {serviceData.map((item) => (
                     <div className="service-description" key={item._id}>
