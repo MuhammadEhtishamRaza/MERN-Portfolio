@@ -1,6 +1,7 @@
 # MERN Portfolio Website
 
 ## Image
+### Dark Theme
 <img width="1892" height="825" alt="image" src="https://github.com/user-attachments/assets/65d3c2cc-5df2-4bf4-aad5-c280ad2a606d" />
 <hr/>
 <img width="1897" height="825" alt="image" src="https://github.com/user-attachments/assets/71493db8-b99e-4158-a7b6-578d03ec0d0f" />
@@ -13,6 +14,8 @@
 <hr/>
 <img width="1897" height="824" alt="image" src="https://github.com/user-attachments/assets/68565509-b30a-43bf-9b5f-e9c3136a4a59" />
 <hr/>
+
+### Light Theme
 <img width="1896" height="823" alt="image" src="https://github.com/user-attachments/assets/31fa5cdd-692b-4e89-8628-c358c44bc53a" />
 <hr/>
 <img width="1888" height="819" alt="image" src="https://github.com/user-attachments/assets/6dd499a9-6ea7-4afc-93c6-453ad315afd8" />
@@ -25,6 +28,8 @@
 <hr/>
 <img width="1890" height="826" alt="image" src="https://github.com/user-attachments/assets/5e5ac763-1baa-4a21-a6c6-1afd6b45e4a9" />
 <hr/>
+
+### Dashboard
 <img width="1918" height="827" alt="image" src="https://github.com/user-attachments/assets/cf5c1010-e968-4982-a2f3-dbb7429566a5" />
 <hr/>
 <img width="1917" height="828" alt="image" src="https://github.com/user-attachments/assets/0b0f13dd-1edd-49ce-8007-6730df715f7d" />
